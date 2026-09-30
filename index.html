@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yessi Anastasia | I notice things</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=DM+Serif+Display:ital@0;1&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3ecdf;--ink:#211d1a;--mut:#65594e;--card:#fbf7ee;--line:#d6c9b3;--hi:#f2c744;--pink:#b9482c;--teal:#2f4fbf;--tealink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1815;--ink:#f1e9dc;--mut:#b3a695;--card:#27221e;--line:#3d352e;--teal:#8ea6ff;--tealink:#10162e;--pink:#e8896b}}
+:root[data-theme="dark"]{--bg:#1c1815;--ink:#f1e9dc;--mut:#b3a695;--card:#27221e;--line:#3d352e;--teal:#8ea6ff;--tealink:#10162e;--pink:#e8896b}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 Nunito,"Helvetica Neue",Arial,sans-serif}
+.sans,button,nav,h1,h2,h3,summary{font-family:Nunito,"Helvetica Neue",Arial,sans-serif}
+.hand{font-family:"Amatic SC","Bradley Hand",cursive;font-size:1.7rem;font-weight:700;color:var(--pink)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1.5px solid var(--line);display:flex;gap:.25rem;overflow-x:auto;padding:.4rem .75rem}
+nav button{border:0;background:none;padding:.5rem .8rem;font-weight:500;border-radius:8px;white-space:nowrap}
+nav button[aria-current="page"]{background:var(--ink);color:var(--bg)}
+main{max-width:46rem;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+h1{font-size:clamp(2.6rem,12vw,4.6rem);line-height:.95;letter-spacing:-.03em;margin:.5rem 0}
+h2{font-size:1.8rem;margin:2.5rem 0 .25rem;letter-spacing:-.01em}
+h3{font-size:1.15rem;margin:0 0 .25rem}
+p{margin:.4rem 0;max-width:38rem}
+.mut{color:var(--mut)}
+button{font-size:1rem;cursor:pointer;color:var(--ink)}
+.btn,.chip{border:1.5px solid var(--ink);background:var(--card);border-radius:999px;padding:.5rem 1rem;min-height:44px;font-weight:500}
+.btn.go{background:var(--ink);color:var(--bg);font-size:1.1rem;padding:.6rem 1.6rem}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:var(--tealink)}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}
+.ph{background:var(--hi);color:#1b1f24;padding:0 .35rem;font-family:Nunito,sans-serif;font-size:.9rem;border-radius:3px}
+.scrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:1rem;margin:1.25rem 0}
+.frag{background:var(--card);border:1.5px solid var(--line);padding:.9rem;position:relative;min-height:6.5rem;text-align:left;font:inherit;border-radius:4px;transition:transform .2s}
+.frag:nth-child(3n+1){transform:rotate(-1.5deg)}.frag:nth-child(3n+2){transform:rotate(1.2deg)}.frag:nth-child(3n){transform:rotate(-.5deg)}
+.frag:hover,.frag:focus-visible{transform:rotate(0) scale(1.02)}
+.frag::before{content:"";position:absolute;top:-8px;left:1rem;width:2.6rem;height:.9rem;background:var(--hi);opacity:.85}
+.frag b{font-family:Nunito,sans-serif;display:block}
+.chain{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:1.5rem 0;font-family:Nunito,sans-serif;font-weight:700}
+.chain span+span::before{content:"\2192";margin-right:.4rem;color:var(--pink)}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:6px;padding:1rem 1.15rem;margin:1rem 0}
+.card.on{border-color:var(--teal);box-shadow:5px 5px 0 var(--teal)}
+.card.dim{opacity:.45}
+.card dt{font-family:Nunito,sans-serif;font-weight:700;margin-top:.7rem}.card dd{margin:0}
+.reveal{border-left:5px solid var(--hi);background:var(--card);padding:.8rem 1rem;margin:1rem 0}
+details{border-top:1.5px solid var(--line);padding:.6rem 0}
+summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+.quote{font-size:clamp(1.6rem,7vw,2.4rem);font-style:italic;line-height:1.2;margin:1rem 0}
+.paper{background:var(--card);background-image:linear-gradient(transparent 1.65rem,var(--line) 1.65rem);background-size:100% 1.7rem;border:1.5px solid var(--line);padding:0 1rem;line-height:1.7rem}
+.route a,.route button{display:inline-block;margin:.25rem .25rem .25rem 0}
+.stk{display:inline-flex;gap:.3rem;align-items:center;padding:.05rem .6rem;border-radius:999px;font:500 .85rem Nunito,sans-serif;color:#1a1512;background:var(--sc,#ccc)}
+.s-travel{--sc:#e28a6b}.s-hospitality{--sc:#d4676c}.s-agriculture{--sc:#a8b05f}.s-marketing{--sc:#86a0f2}.s-events{--sc:#f2c744}.s-writing{--sc:#c497b8}.s-ideas{--sc:#f2a054}.s-learning{--sc:#93a9d6}
+.card[class*=" s-"]{border-left:8px solid var(--sc)}
+.map{position:relative;margin:1rem 0}.map svg{width:100%;height:auto;display:block}
+.pin{position:absolute;transform:translate(-50%,-100%);background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:.4rem .8rem;font-weight:700;min-height:44px}
+.pin[aria-pressed="true"]{background:var(--teal);color:var(--tealink)}
+.tag{font-size:.85rem;padding:.2rem .7rem;min-height:36px;border-radius:999px;border:1.5px solid var(--line);background:var(--card)}
+.tag:hover{border-color:var(--teal)}
+.strip{display:flex;gap:.5rem;overflow-x:auto;padding:.25rem 0}.strip .chip{white-space:nowrap}
+input,textarea{font:inherit;width:100%;padding:.6rem;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:6px;margin:.2rem 0 .8rem}
+label{display:block;font-family:Nunito,sans-serif;font-weight:500}
+.photo{filter:sepia(.18) saturate(.9) contrast(1.02)}
+.wtxt{white-space:pre-wrap;line-height:1.7;max-width:34rem}
+h1,h2,.quote{font-family:"DM Serif Display",Georgia,serif;font-weight:400}
+details.card>summary{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:1.25rem}
+.card dd{white-space:pre-line}
+.ft{max-width:46rem;margin:0 auto;padding:0 1.25rem 3rem}
+@media print{nav,.noprint{display:none}}
+a{color:var(--teal)}
+@media (prefers-reduced-motion:reduce){.frag{transition:none}}
+</style>
+</head>
+<body>
+<nav id="nav" aria-label="Sections"></nav>
+<main id="app"></main>
+<script>
+/* ===== CONTENT: edit here, the interface below reads from this ===== */
+var PH=function(){return ""};
+var EMAIL="anastasiayessi13@gmail.com"; /* add your email between the quotes */
+var NAV=[["home","Home"],["work","Work"],["australia","Australia"],["places","Places"],["community","Community"],["writing","Writing"],["archive","Archive"],["about","About"],["search","Search"],["cv","Professional view"]];
+var WEIRD=[["Grain sampling","What does it have to do with marketing?","Attention to detail. Standards. Quality. Documentation. Consequences."],["Sushi","What does it have to do with customer experience?","Speed. Presentation. Consistency. Timing. Customer expectations."],["Hospitality","What does it have to do with understanding people?","People tell you what they want, sometimes without saying it directly."],["Farm work","What does it have to do with strategy?","Systems behave differently in real life than they do on paper."]];
+var CAFE=[["Run ads","Ads bring people in. They don't explain why anyone should remember the place. Worth doing after you know what's memorable."],["Change the menu","If the food is already great, the menu probably isn't the problem."],["Talk to customers","Cheap and fast. Ask what they remember, and what they told friends."],["Observe the customer journey","Sit there for a day. Where do people hesitate, linger, leave? Memory is built in small moments."],["Change the visual identity","A new logo helps only if the old one was the barrier. Usually it's not."],["Create an experience","Give people one thing to talk about that isn't the food."],["Improve the storytelling","The owner is passionate. Does the customer ever get to hear why?"]];
+var SCENE=[["Queue","Where do people wait, and what do they do while waiting?"],["Signage","Does it say what the place is, or only what it sells?"],["Pricing","Price tells a story before the product does."],["Staff interaction","One warm sentence can outweigh a whole ad."],["Lighting","People decide whether to stay before they read anything."],["Packaging","The moment a customer shows it to someone else."],["Product placement","What you see first is what you assume is best."],["Social media presence","Does the online version feel like the same place?"]];
+var PRINC=["I ask why before I execute.","I like to understand the system.","I observe before I assume.","I like people, but I also like processes.","I can move between strategy and hands-on work.","I like autonomy and clear expectations.","I learn by building a map of how things work."];
+var REASONS=["A project","A job","A collaboration","A business idea","Just something interesting"];
+/* Every experience is one line: [title, detail, place, tags, sticker]. Add a line and it appears on the map, in tags and in the professional view. */
+var STK={travel:["✈️","Travel"],hospitality:["🍣","Hospitality"],agriculture:["🌾","Agriculture"],marketing:["📱","Marketing"],events:["🎪","Events"],writing:["✍️","Writing"],ideas:["💡","Ideas"],learning:["📚","Learning"]};
+/* ONE SOURCE OF TRUTH. E(title, role, start, end, place, tags, sticker, extras).
+   Work, Australia, Community, Professional view, World, Threads and Random all read from ITEMS.
+   lv: "case" | "flash" | "card". ty: "work" | "volunteer" | "education". vis: "public" (default) | "private" | "draft".
+   Only public items are ever rendered. Private and draft pieces are kept out of this file entirely. */
+function E(t,role,s,e,pl,tg,st,x){x=x||{};x.role=role;x.s=s;x.e=e;x.ty=x.ty||"work";x.lv=x.lv||"card";x.vis=x.vis||"public";var d=s?s+(e?" to "+e:""):"";return [t,role+(d?", "+d:"")+(x.d?". "+x.d:""),pl,tg,st,x]}
+var CAT=["people","customers","food","systems","marketing","business","operations","quality","travel","hospitality","events","leadership","community","storytelling","culture","education","facilitation","sustainability"];
+var T_BCH=`Updates on Bubbling Chilli Hotpot Restaurant (Sunway Velocity Branch) and Our Plan Moving Forward
+
+As MCO kicks in, the project had been moving at a slower pace compare to January & February.
+
+Regardless of the Covid-19 and MCO, Bubbling Chilli Hotpot is still gonna set foot in Malaysia. Patience and perseverance are key to move towards 75% - 100% funding goals to kick start the project.
+
+Kindly be informed that
+
+1) We will not be collecting any deposit or funding from you until we get more committed micro-owners. The full investment amount will only be collected by the lawyer provided after we have firmed up the committed investment amount up to 100%.
+
+2) Once the kick-off fund is fully collected by our lawyer, renovation shall begin.
+
+3) It takes 45-60 days for the restaurant to complete renovation and start its operation.
+
+4) From the day of restaurant launch, you can start enjoying ur passive income and commission daily
+
+Our fundraising activities will resume and will be conducted online via webinar in the next 2 weeks.
+We will keep you informed on our progress.`;
+var T_PIVOT=`New Business Models to Help F&B to Transform & Grow Stronger
+
+During the past few weeks of MCO, we have conducted a consumer dipstick and talked to selected potential F&B business owners on how Table2Own can help them to rebuild their business after MCO.
+
+We are keen to explore how Table2Own business model can pivot and tweak to serve more F&B owners to survive and thrive during these challenging times.
+
+The business idea is well-received by many potential prospects and we have open up Table 2 Own platform to be an App-as-a-Service system.
+
+We provide an alternative fundraising option for F&B businesses to offer exclusive reward program to their faithful and loyal returning customers a chance to enjoy revenue-sharing and co-owners of the businesses.
+
+More details about our fundraising on our website.
+
+More brands are coming!
+In the coming months, we are going to make more F&B businesses available in Table 2 Own platform so that you have a broader selection to pick and choose to invest.
+
+Feel free to visit www.table2own.com for more information.
+Fundraising activities will be conducted online via webinar in the coming weeks, we will keep you informed so that you can come and learn more about the new brands that are on board with us.
+
+Thank you for your support and time so far!
+Feel free to contact us for any enquiries.
+Have a good holiday everybody and stay safe!
+
+Best Regards,
+Table 2 Own Holdings Sdn Bhd`;
+function art(t,meta,txt){return '<details><summary>'+t+'</summary><p class="mut" style="margin:.25rem 0">'+meta+'</p><p class="wtxt">'+txt.replace(/&/g,"&amp;")+'</p></details>'}
+var ITEMS=[
+E("Bookatrip Indonesia","Travel Consultant / Marketing / Business","05/2020","02/2023","Indonesia",["travel","marketing","business","customers","communication","community","storytelling"],"travel",{lv:"case",d:"I joined an existing company and worked with it while it was going through rebranding and repositioning during COVID.",
+prob:"How do you keep a travel brand meaningful when people cannot travel normally?\n\nThe challenge was not simply: how do we sell travel? It became: what does travel mean to people when travel itself becomes difficult?\n\nI worked on repositioning and communication, including developing #TravelInfinitely. The audience was referred to as Teman Jalan so the brand could feel more like a community connected by travel rather than simply a company selling trips.",
+did:["Client enquiries","Consultations","Bookings","Negotiations","Itinerary development","Customer communication","Complaint handling","Supplier relationships","Business partner relationships","Facebook and Instagram","Blogs and videos","Digital advertising","Campaign analytics","Weekly newsletters","Investor communication","Client communication","Working with the director"],
+obs:"Business circumstances change the way people experience a product.\n\nWhen people cannot travel in the way they normally do, the relationship between the customer and the travel brand changes too.\n\nThat made me think less about selling a destination and more about keeping the idea of travel alive.",
+learn:["Resilience during uncertainty","Adapting communication to changing customer needs","Rethinking brand positioning","Finding opportunities when circumstances change","External circumstances can change a customer's relationship with a product","The importance of community when normal business activity becomes difficult"],
+diff:"I would invest more deliberately in fundraising and community-building.\n\nI would build a larger community involving travellers, locals, people affected by the pandemic, travel enthusiasts, local businesses and destination communities.\n\nThe goal would be to build resilience through community, not only through transactions.",
+links:[["Bookatrip on Instagram","https://www.instagram.com/p/B_KXN3OBCC1/?stkn=MTdoajgyeDk3bGhubw=="]]}),
+E("Table2Own","Marketing Representative / PA / Investor Relations","11/2019","04/2020","Malaysia",["business","marketing","people","communication","systems"],"marketing",{lv:"case",d:"Table2Own was a newly established company working around a micro-franchising / investment business model.",
+prob:"How do you communicate a new business model clearly enough for people to understand it, trust it and potentially participate in it?",
+did:["Understanding prospective clients and stakeholders","Presenting solutions","Meetings and proposals","Business documentation","Follow-up, networking and referrals","Identifying opportunities","Stakeholder communication","Investor relations and PA support","MoU, POA and financial projections","International communication, with contacts involving Malaysia, Vietnam and Singapore","Instagram and Facebook","Carousel content and copywriting","Investor newsletters","MOU / MOM","Tracking through cloud workspace"],
+learn:["Early-stage businesses often have to communicate an idea before it is fully established","Trust matters","Business models need to be understandable to the people involved","Stakeholder communication is partly about keeping relationships alive","Business development is not only selling. It is also identifying fit.","Documentation, numbers and communication support each other","Networking can create opportunities that are not immediately visible"],
+diff:["Build a more structured investor / community pipeline earlier.","Segment audiences more clearly."],
+links:[["Table2Own on Instagram (investor pitching sessions are in the Highlights)","https://www.instagram.com/table2own?stkn=b212aG50aTY1MXVv"],["Table2Own on Facebook","https://www.facebook.com/share/1BzsBUD8HW/?mibextid=wwXIfr"],["Bubbling Chilli Hotpot on Instagram","https://www.instagram.com/bubblingchilihotpot?stkn=dndjdHNkOHE3Y2xs"]],
+sub:function(){return '<h3 style="margin-top:1.25rem">When the market changed</h3><h3>Story A: Bubbling Chilli Hotpot</h3><p class="mut">Historical company communication from the MCO period: Newsletter for Investors, May 2020. This is what was communicated and planned, not proof of what happened next.</p><ul><li>Funding would not be collected until more committed micro-owners were secured.</li><li>Funds would be collected through the lawyer once the committed amount was firmed.</li><li>Renovation would begin after the required funding stage.</li><li>Renovation was expected to take 45 to 60 days.</li><li>Fundraising activities would move online through webinars.</li></ul>'+stripBlock("Bubbling Chilli Hotpot (as described)")+art("Bubbling Chilli Hotpot, Sunway Velocity","Project update, MCO 2020. Newsletter for Investors, May 2020.",T_BCH)+'<h3>Story B: business model pivot</h3><p class="mut">Historical communication, May 2020. The company described opening its platform as an App-as-a-Service system and exploring ways to help F&amp;B businesses rebuild. Not a verified outcome.</p>'+stripBlock("Business model pivot")+art("New business models to help F&B","Business-model announcement, May 2020.",T_PIVOT)+'<h3>My observation</h3><p>Business models don\'t exist separately from circumstances.<br><br>When the environment changed, the question became:<br>What are businesses struggling with?<br>What are customers actually caring about?<br>And how could the model change with them?</p>'}}),
+E("Japanese Festival by Ruby","Marketing Strategist and Sponsorship","03/2019","09/2019","Indonesia",["marketing","events","business","communication"],"marketing",{lv:"case",prob:"How do you turn an event or brand into consistent communication?",
+did:["Content matrix research","Copywriting","Social media analysis","Brand awareness","Editing, proofreading and formatting","Checking aesthetics and content against standards","Sponsorship work","Negotiating with sponsors and tenants","Closing sponsorship and tenant opportunities"],
+links:[["Japanese Festival on Instagram","https://www.instagram.com/jfest.official?stkn=eGEzOGFnYnllMjBh"]]}),
+E("Pontianak ChangeMaker Youth Summit","Event Initiator & Coordinator","15 September 2018","","Indonesia",["events","community","leadership","youth","education","facilitation"],"events",{lv:"case",ty:"volunteer",c:"Pontianak",d:"Kampoeng English Purnama, Indonesia. #PontianakChangemakerYouthSummit #PCYouthS",
+prob:"Young people can have ideas and energy.\n\nBut sometimes what is missing is simply a space to meet, discuss them and feel able to act.",
+did:["Initiated the summit","Coordinated the program structure","Coordinated volunteers","Coordinated speakers","Coordinated participant engagement","Organised the event","Floor coordination","Social media duty during the event"],
+learn:["Connection can come before ideas become action","Facilitation is different from simply presenting","Participatory space can matter as much as content","Community projects need communication, coordination and adaptability"],
+diff:["Create online follow-up activities.","Continue discussions after the physical event.","Build a longer-term community around participants."]}),
+E("GrainCorp","Grain sampler","09/2025","06/2026","Australia",["agriculture","quality","systems","food","operations"],"agriculture",{lv:"flash",c:"Yamala; Toobeah; Carrington",d:"Grain handling and export operations.",
+did:["Grain assessment and grading","Checking against domestic and export standards","Foreign seed identification and identifying impurities","Moisture checks","Contamination risks","Recording results","Communicating relevant information within the operation"],
+nt:"Small details can affect whether a product meets requirements.",learn:"Quality isn't just the final product. Observation → standards → consistency → documentation → communication → decision."}),
+E("Mitsuki Sushi","Sushi Hand + FOH","05/2025","08/2025","Australia",["food","customers","precision","operations","hospitality"],"hospitality",{lv:"flash",c:"Brisbane",
+did:["Made many kinds of sushi, essentially everything on the menu except the large / big roll: nigiri, seared sushi, sashimi, chirashi, inari, sushi sets and smaller items","Also worked in front of house","Focus on precision, consistency, presentation and speed","Switching between prep and customer-facing work"],
+nt:"The customer only sees the finished plate. Behind it: ingredients → preparation → timing → presentation → communication → service.",learn:"Customer experience is often the visible result of many invisible systems."}),
+E("Hamy Pho","FOH Lead","02/2024","08/2024","Australia",["people","customers","hospitality","leadership","community"],"hospitality",{lv:"flash",c:"Swan Hill",
+did:["Reshuffle of the restaurant and FOH SOP","Front-of-house leadership and coordinating the FOH team","Coordinating between FOH and kitchen","Customer service and handling customers","Supporting service during busy periods and maintaining service standards"],
+nt:"Regular customers became people rather than transactions. Good service can involve remembering someone’s usual order, preferences, dietary needs and routines, and making someone feel recognised."}),
+E("Guzman y Gomez","Cook","07/2025","08/2025","Australia",["food","hospitality","operations","speed","teamwork"],"hospitality",{lv:"flash",c:"Brisbane",did:["Guacamole","Pico de gallo","Salad","Breakfast","Mise en place","Service preparation"]}),
+E("McDonald's","Overnight Front Crew / Drive-Thru","09/2023","10/2024","Australia",["customers","hospitality","operations","speed","teamwork","service"],"hospitality",{c:"Swan Hill"}),
+E("Broken Hill Hotel","Bar & motel attendant","08/2023","09/2023","Australia",["customers","hospitality","operations"],"hospitality",{c:"Kalgoorlie"}),
+E("Swan Hill Show","Event staff","10/2024","","Australia",["events","customers"],"events",{c:"Swan Hill",d:"Showbag Australia"}),
+E("EKKA Brisbane Royal Festival","Event staff","08/2025","","Australia",["events","customers"],"events",{c:"Brisbane"}),
+E("Horse Race Event","Event staff","09/2026","","Australia",["events","customers"],"events",{c:"Newcastle"}),
+E("SunRice","Retort operator","03/2025","05/2025","Australia",["food","quality","operations","systems"],"agriculture",{c:"Leeton"}),
+E("Youfoodz","Machine operator","05/2025","08/2025","Australia",["food","quality","operations","systems"],"agriculture",{c:"Brisbane"}),
+E("Bright Light Agribusiness","Quality assessor","02/2025","03/2025","Australia",["agriculture","quality","operations"],"agriculture",{c:"Robinvale"}),
+E("Sunfruit Orchards","Quality Control & Fruit Thinning","10/2023","02/2024","Australia",["agriculture","quality"],"agriculture",{c:"Swan Hill"}),
+E("Redlands & Prochilo Farms","Quality assurance","02/2024","","Australia",["agriculture","quality"],"agriculture",{c:"Swan Hill"}),
+E("Ruby Event Organizer","Sponsorship staff","01/2016","03/2017","Indonesia",["events","business","marketing","people"],"events",{resp:["Halloween event","Chinese New Year parade and bazaar","Sponsorship, networking and referrals","Identifying business opportunities and client opportunities","Facilitating processes toward deals"]}),
+E("Mainlight Photography","Sales assistant","01/2017","05/2017","Indonesia",["customers","business","people"],"marketing",{resp:["Understanding customer needs","Recommending services and building rapport","Upselling","Helping customers make decisions"]}),
+E("Sekolah Batas Negeri","Training facilitator","2018","2019","Indonesia",["education","leadership","culture","community","facilitation"],"learning",{lv:"flash",ty:"volunteer",did:["Trained and mentored volunteers to deliver child-focused learning activities in rural and remote education settings","Guided volunteers on child-centred teaching approaches, cultural sensitivity and adapting lessons to limited resources"]}),
+E("KL YES AFS Awardee Orientation","Orientation team leader","2018","","Indonesia",["leadership","education","culture","facilitation","youth"],"learning",{lv:"flash",ty:"volunteer",did:["Supported young participants during a week-long orientation focused on education and cultural learning","Assisted with learning sessions, group facilitation and participant supervision","Promoted respectful behaviour, inclusion and cultural awareness"]}),
+E("Kampoeng English Purnama","Volunteer teacher & youth program coordinator","2016","2019","Indonesia",["education","youth","community","communication"],"learning",{lv:"flash",ty:"volunteer",did:["English and basic learning activities through group programs such as Social Sunday","Supported children's social, communication and learning skills through interactive, play-based activities","Assisted educational events and community social activities"]}),
+E("AIESEC: Paper Plane Project","Marketing team member","2018","2019","Indonesia",["marketing","education","community"],"learning",{lv:"flash",ty:"volunteer",did:["Supported education-focused projects aligned with SDG 4 Quality Education","Developed campaign content to support youth engagement and community outreach"]}),
+E("AIESEC: Pontianak Smart City","Community development member","2017","2018","Indonesia",["community","sustainability","culture"],"learning",{lv:"flash",ty:"volunteer",did:["Supported community development initiatives aligned with SDG 11 Sustainable Cities and Communities","Promoted community participation, environmental awareness and social responsibility","Contributed to urban sustainability and climate awareness projects related to SDG 6 and 13"]}),
+E("AIESEC: Exchange participants' support buddy","Support buddy","2016","2017","Indonesia",["culture","people","communication"],"learning",{lv:"flash",ty:"volunteer",did:["Supported participants' adjustment to new learning and cultural environments","Provided guidance for personal development and project outcomes"]}),
+E("Macquarie Education","Advanced Diploma of Leadership and Management","2026","Current","Australia",["leadership","education"],"learning",{ty:"education",c:"Sydney"})];
+function S(g,l,t){return [g,l,t||""]}
+var STRIPS=[
+["Bookatrip Indonesia",[S("🧭","Customer need","Client enquiries and consultations."),S("📍","Destination","Understanding customer interests and behaviour."),S("🍜","Food and culture","Travel concepts such as Flavour Origins."),S("🗺️","Itinerary","Itinerary development."),S("✈️","Journey","Bookings, negotiations, customer issues, supplier relationships.")]],
+["Table2Own",[S("🙂","Person","Meetings with prospective clients and stakeholders."),S("💬","Conversation","Understanding needs."),S("📄","Proposal","Presenting solutions and business documentation."),S("🤝","Relationship","Follow-up, networking and referrals."),S("🔭","Opportunity","Identifying opportunities.")]],
+["Bubbling Chilli Hotpot (as described)",[S("💰","Funding","Working toward 75% to 100% of the funding goal, as described."),S("🤝","Committed micro-owners","No deposit or funding collected until more committed micro-owners, as described."),S("⚖️","Lawyer / fund collection","The full amount collected by the lawyer once committed investment is firmed up to 100%, as described."),S("🛠️","Renovation","Begins once the kick-off fund is fully collected. The update gave 45 to 60 days."),S("🍲","Restaurant launch","After renovation and start of operation, as described.")]],
+["Business model pivot",[S("😷","MCO","Malaysia's movement control order period."),S("📋","Consumer dipstick","A consumer dipstick during the first weeks of MCO."),S("💬","Conversations with F&B owners","Talked to selected potential F&B business owners about rebuilding after MCO."),S("🔀","Changing market need","Exploring how the model could pivot to serve more F&B owners."),S("🧩","App-as-a-Service","The update said the platform was opened up as an App-as-a-Service system."),S("🎁","Revenue-sharing / co-ownership","An alternative fundraising option: exclusive reward programs letting loyal customers share revenue and co-own.")]],
+["GrainCorp",[S("🌾","Sample","A grain sample isn’t just a handful of grain. It has to represent the load well enough for decisions to be made from it."),S("💧","Moisture","Grain behave differently depending on how much water it contains. Moisture affect storage, quality and whether the grain meets the relevant standard."),S("🔬","Foreign seed","Foreign seeds, insects, plant material and other impurities affect how the grain is classified."),S("📋","Records","Assessment isn’t very useful if nobody can trace what was found, where it was found and what decision followed."),S("🚢","Export","Good enough isn’t a universal standard. Specifications can depend on where the product is going.")]],
+["Mitsuki Sushi",[S("🥢","Ingredients","A finished sushi plate hides a surprising amount of preparation."),S("🔪","Preparation","Preparation and organisation matter because the next few orders are already waiting behind the one you’re making. 😭"),S("🍣","Sushi","Apparently I love making them as much as I love devouring them."),S("🍱","Plating","Best marketing when done properly."),S("🙂","Customer","After some hours, I wanted to be the customer instead 🥴")]],
+["Hamy Pho",[S("🙂","Customer","I remember their preferences, routines, dietary needs, usual orders. Highkey, loml."),S("🧑‍🤝‍🧑","FOH","Customers, staff, kitchen timing, communication and service standards all happening at once ~"),S("🍜","Kitchen","A lot of customer experience is created by people the customer never sees. Also loml."),S("🍽️","Table","Clean it. Wait it. Turn it faster!")]],
+["Guzman y Gomez",[S("🥑","Ingredients / prep","Guacamole. Pico de gallo. Salad. Breakfast. I started 4 am when the restaurant open at 7 :)"),S("📋","Mise en place","Being ready before you need to be ready is basically the whole point."),S("🍳","Cook / assemble","The flow is flowing."),S("⏱️","Service","The customer sees the final few seconds of a much longer chain :)")]],
+["Pontianak ChangeMaker Youth Summit",[S("💡","Idea","Sometimes what is missing is simply a space to meet, discuss them and feel able to act."),S("👥","People","Community events are people before they are schedules."),S("🎤","Facilitation","Facilitating doesn’t end as presentation."),S("🗂️","Coordination","Requires a ton of coordination, patience, and self-control"),S("🚀","Action","What happen after everyone goes home?!")]],
+["Ruby Event Organizer",[S("🎪","Event","Halloween event, Chinese New Year parade and bazaar."),S("👥","People"),S("🕸️","Network","Networking and referrals."),S("🏷️","Sponsor","Sponsorship."),S("🔭","Opportunity","Identifying business opportunities and facilitating processes toward deals.")]],
+["Japanese Festival by Ruby",[S("💡","Idea","An event idea becomes a brand when people can recognise it consistently."),S("📝","Content","A content matrix maketh the brand."),S("✂️","Edit","Double triple checking if I’m making any sense."),S("📱","Social","A great feedback loop between the brand and the audience."),S("👥","Audience","People attend the same event for completely different reasons."),S("🎯","Brand","Means the pieces shall belong to the same world.")]]];
+/* Writing: exact original text. vis: public | private | draft. Only public pieces belong in this file. */
+var WRITE=[
+{id:"rumah",t:"rumah",date:"26 October 2023",lang:"id",vis:"public",th:["writing","storytelling"],
+text:`rumahku rusak, pipanya bocor
+airnya merembes kemana mana membasahi seisi rumah
+14 kali jam dinding itu telah berputar penuh papan foto di dinding telah bernoda coklat
+lelah, ku putuskan berkeliling mencari tenang
+namun ada air menetes dari langit
+rumah dengan pintu terbuka tepat di sampingku
+lega, akhirnya aku dapat bernafas dalam teduh
+rumahnya cantik, rapi, namun tampak kosong
+hmm seperti lama tak ditinggali
+aku bersenandung, berusaha menjadi teman bagi diri sendiri
+dan kau tau??? rumahnya bergema!
+dalam sepersekian detik aku merasa dunia tak begitu sepi
+tapi aku salah! tanpa aku sadar tanganku telah bergerak dan terus menerus mengisi rumah ini
+aku nyaman, aku teduh, rumah ini paham akan resahku
+rumah ini baru… bagi jiwaku
+dapurnya tak berantakan, walau lantainya telah berjejak
+ku tinggali rumah ini tanpa seijin pemiliknya
+apa ku beli saja rumah ini dari pemiliknya?
+ah iya, maaf, aku lupa ini bukan tentang rumah.`,
+tr:`my house is falling apart,  
+a pipe has given way.
+
+water keeps finding its way into every corner,  
+soaking everything I once called mine.
+
+14 turns of the clock have passed,  
+the edges of those hanging photographs have begun to brown.
+
+exhausted,  
+I’m leaving for the sake of silence.
+
+rain is falling.
+
+to my surprise, my eyes caught a house with its door left open, right beside me.
+
+what a relief.  
+at last, somewhere I can breathe without the need of bracing myself.
+
+it is beautiful. orderly. but strangely empty.
+
+hmm…  
+it feels as though no one has lived here  
+for a long, long time.
+
+I hum to myself,  
+trying to make my own company enough.
+
+well, what could I even guess?  
+the house echoes.
+
+for a moment,  
+the world doesn't feel quite so lonely.
+
+but I was fallacious.
+
+oblivious, I started leaving pieces of myself behind
+a bit here,  
+a tiny there,  
+until the house begins to be furnished.
+
+it’s comfortable and sound.  
+I am very much sheltered here.
+
+somehow,  
+this house knows what makes me restless.
+
+it is unfamiliar, a novelty to everything I have known,  
+yet my soul settles into it as if it were meant to.
+
+a spotless kitchen,  
+though there are some footprints on the floor.
+
+I am rotting  
+where the owner did not bethink.
+
+should I ask its owner  
+if I can have the house?
+
+ah. well.  
+I'm sorry.
+
+this was never about a house.`},
+{id:"world-ending",t:"when the world is ending",date:"11 January 2024",vis:"public",th:["writing"],
+text:`when the world is ending, I'd probably feel grateful for the path we've crossed
+cause when the world is ending, I'd probably sitting by myself
+cause when the world is ending, I'd probably spend the last minutes wondering if I have anyone to run to`},
+{id:"restaurant",t:"the restaurant",date:"4 July 2025",vis:"public",th:["writing","hospitality"],
+text:`no, I'm no longer in the restaurant
+life called and I had dinner in the runway
+there were scratches and traces of your presence on that table
+you waited, but I didn't make it there on time`},
+{id:"opposite",t:"180° to love",date:"30 July 2025",vis:"public",th:["writing"],
+text:`I run, run, run, run
+Make some turn, run, and run
+I’m finally there, quite surprised oh how the opposite of love feels like
+and I’ve been there, at the other side of the road, being indifferent
+The polar opposite of love has never been hate, it’s indifference`},
+{id:"more-of-me",t:"becoming more of me",date:"7 August 2025",vis:"public",th:["writing","people"],
+text:`I once had someone who would criticise my writing style
+when I was still making a living from my words
+I stopped writing the way I loved
+I once had someone who would mock my accent
+the way I spoke languages I wasn’t fluent in
+I stopped speaking some of them altogether
+I once dated someone who criticised the way I dressed
+bet you I started dressing like the girls in his feed
+changed my lip colour to something I never liked
+I was told a couple of times that the body I actually loved looked weird
+bet you I started covering every curve
+all those times, I thought I was evolving
+but really, I was just slowly disappearing
+shrinking into versions they could digest
+palatable, silent, an apologetic version of me
+now I gained myself back
+through the unkind
+through all the begging
+learning to unlove these people I used to swear to live for
+to stop loving the ones who made me small
+in that very unloved space
+I started making room for me again
+turns out the cliche is true
+we are what we love
+thus I loved them, I became less
+now that I love me,
+I am becoming more of me.
+ask me not about why I stopped writing,
+or why I no longer speak Mandarin or Deutsch
+the people I loved looked happier
+when I shut my mouth and mind.`},
+{id:"girlhood",t:"girlhood 🤍",date:"8 March 2026",vis:"public",th:["writing","community","people","culture"],
+text:`younger me always gravitated toward what felt light
+easier, filled with laughter.
+simpler dynamics,
+less reading between the lines,
+less emotional politics.
+a life where I didn’t have to keep pace with womanhood.
+yet came the years
+when I learned to choose myself,
+gently loosening my grip
+on the little girl who was endlessly ambitious.
+I’d always had glimpses of it,
+but in these past years,
+I found my way to the sisters I’d always longed for.
+above all, I feel accepted
+no reasoning demanded for my beliefs,
+no value or worth to prove,
+no timeline I’m due to meet,
+no fitting in, no reshaping.
+life still moves.
+I’m just no longer running.
+and along the way,
+life led me
+to the most exciting journey of all
+girlhood.
+Selamat hari kartini
+女人能頂半邊天`},
+{id:"numerical",t:"A NUMERICAL LOT",date:"30 April 2026",vis:"public",th:["writing","storytelling"],
+text:`I miss what it felt like to like someone
+to be genuinely into them
+to fall in love without an exit plan written all over my head
+to safely believe them without a quiet voice interrupting, whispering that of why I shouldn’t
+it’s strange, love turned into something I analyse
+something I measure, calculate, question
+when did this all become math?
+is it something I can solve or is it just a prompt, something I’m meant to live through?`},
+{id:"considered",t:"to be considered",date:"15 July 2026",vis:"public",th:["writing"],
+text:`to be loved is to be considered
+to be loved is to be considered
+to be loved is to be considered
+oh I was considered
+only insofar as I go with interpretation
+no. to be loved is to be considered 
+damn I am confronting the exception 
+no... to be loved is to be considered 
+stayed in line, I am almost considered`}];
+var PATHS=[["I want to see your work","work"],["I want to understand how you think","stories"],["I want to explore your travels","world"],["I want to read your writing","writing"],["I want to see your archive","archive"],["I want to work with you","contact"]];
+var HIRE=["Marketing","Content","Customer experience","Events","Business ideas","Research","Operations","Strategy","Something else"];
+/* ===== INTERFACE ===== */
+var $=function(s,r){return (r||document).querySelector(s)};
+var app=$("#app"),nav=$("#nav"),V={};
+function go(v){Object.keys(V).forEach(function(k){V[k].hidden=k!==v});nav.querySelectorAll("button").forEach(function(b){b.removeAttribute("aria-current");if(b.dataset.v===v)b.setAttribute("aria-current","page")});location.hash=v;window.scrollTo(0,0)}
+function link(t,v){return '<button class="btn" data-go="'+v+'">'+t+'</button>'}
+function sec(id,html){var s=document.createElement("section");s.id="v-"+id;s.hidden=true;s.innerHTML=html;app.appendChild(s);V[id]=s;return s}
+NAV.forEach(function(n){var b=document.createElement("button");b.textContent=n[1];b.dataset.v=n[0];b.onclick=function(){go(n[0])};nav.appendChild(b)});
+document.addEventListener("click",function(e){var g=e.target.closest("[data-go]");if(g)go(g.dataset.go)});
+function toggleSet(box,cb){box.addEventListener("click",function(e){var b=e.target.closest("button[data-k]");if(!b)return;box.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});cb(b.dataset.k)})}
+function chips(arr){return arr.map(function(a){return '<button class="chip" aria-pressed="false" data-k="'+a+'">'+a+'</button>'}).join("")}
+sec("home","");
+/* STORIES */
+var st=sec("stories",'<h2>Stories</h2><h3>The antique shop</h3><div class="card"><p>After moving, I walked into an antique store just to look around. I ended up talking to the owner and getting curious about the stories behind the pieces. Why do some businesses make you want to stay and talk instead of just buy?</p></div><h2>The weirdly relevant experience</h2><p class="mut">Tap one.</p><div class="chips" id="wd">'+WEIRD.map(function(x){return '<button class="chip" aria-pressed="false" data-k="'+x[0]+'">'+x[0]+'</button>'}).join("")+'</div><div id="wr" class="reveal" aria-live="polite" hidden></div><h2>From product to customer</h2><div class="chain"><span>Raw material</span><span>Production</span><span>Quality</span><span>Product</span><span>Customer</span><span>Experience</span></div><p>Sometimes understanding a customer means understanding what happens behind the product.</p><h2>A café has great food. Customers don\'t remember it.</h2><p class="mut">The owner is passionate. The product is good. What would you do first?</p><div class="chips" id="cf">'+CAFE.map(function(x){return '<button class="chip" aria-pressed="false" data-k="'+x[0]+'">'+x[0]+'</button>'}).join("")+'</div><div id="cr" class="reveal" aria-live="polite" hidden></div><p class="mut">There isn\'t one correct answer. That\'s the point.</p><h2>What do you notice first?</h2><p class="mut">Imagine you just walked into a café.</p><div class="chips" id="sc">'+SCENE.map(function(x){return '<button class="chip" aria-pressed="false" data-k="'+x[0]+'">'+x[0]+'</button>'}).join("")+'</div><div id="sr" class="reveal" aria-live="polite" hidden></div>');
+function reveal(id,box,data,fmt){toggleSet($(id,st),function(k){var r=$(box,st),d=data.filter(function(x){return x[0]===k})[0];r.hidden=false;r.innerHTML=fmt(d)})}
+reveal("#wd","#wr",WEIRD,function(d){return '<b class="sans">'+d[1]+'</b><br>'+d[2]});
+reveal("#cf","#cr",CAFE,function(d){return d[1]});
+reveal("#sc","#sr",SCENE,function(d){return d[1]});
+sec("writing","");
+sec("about","");
+var stk=function(s){return '<span class="stk s-'+s+'">'+STK[s][0]+' '+STK[s][1]+'</span>'};
+var STATE={"Brisbane":"Queensland","Yamala":"Queensland","Toobeah":"Queensland","Carrington":"New South Wales","Newcastle":"New South Wales","Leeton":"New South Wales","Sydney":"New South Wales","Swan Hill":"Victoria","Robinvale":"Victoria","Kalgoorlie":"Western Australia"};
+function cl(x){if(!x.c)return "";var a=x.c.split(";").map(function(z){return z.trim()});if(!a.every(function(z){return STATE[z]}))return a.join(" · ");var st=[];a.forEach(function(z){if(st.indexOf(STATE[z])<0)st.push(STATE[z])});return a.length>1?a.join(" · ")+"<br>"+st.join(" · "):a[0]+" · "+st[0]}
+function locs(i){var x=ITEMS[i][5];return x.c?x.c.split(";").map(function(z){return z.trim()}):[ITEMS[i][2]]}
+var PHOTOS=[]; /* real photos only: {id,src,alt,caption,date,place,rel,vis}. Nothing shows until one is added. */
+var THINK=[{t:"Peter Drucker",s:"“There is only one valid definition of business purpose: to create a customer.” The Practice of Management, 1954.",c:"This made me think about the Table2Own pivot: during MCO, the conversation moved toward what customers and F&B businesses were actually dealing with, and how the model could respond.",x:"Table2Own",vis:"public"}];
+sec("cv","");
+/* VIEWS: all built from ITEMS and WRITE (public only) */
+var pub=function(o){return (o.vis||o[5]&&o[5].vis)==="public"};
+function dates(x){return x.s?x.s+(x.e?" to "+x.e:""):""}
+function key(i){var s=ITEMS[i][5].s||"",y=(s.match(/\d{4}/)||[0])[0],m=(s.match(/^(\d{2})\//)||[0,0])[1];return y?parseInt(y)*12+parseInt(m):-1}
+function order(f){return ITEMS.map(function(_,i){return i}).filter(function(i){return pub(ITEMS[i])&&f(i)}).sort(function(a,b){return key(b)-key(a)})}
+function rel(i){var t=ITEMS[i];return ITEMS.map(function(o,j){return [j,o[3].filter(function(g){return t[3].indexOf(g)>-1}).length]}).filter(function(a){return a[0]!==i&&a[1]>0&&pub(ITEMS[a[0]])}).sort(function(a,b){return b[1]-a[1]}).slice(0,5).map(function(a){return a[0]})}
+function li(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul>'}
+function sect(h,c){return c&&c.length?'<dt>'+h+'</dt><dd>'+(typeof c==="string"?c:li(c))+'</dd>':''}
+function tagBtns(t){return t[3].map(function(g){return '<button class="tag" data-thread="'+g+'">'+g+'</button>'}).join("")}
+function stripBlock(n){var k=STRIPS.map(function(s){return s[0]}).indexOf(n);if(k<0)return "";return '<div class="sc2" data-s="'+k+'"><div class="strip">'+STRIPS[k][1].map(function(x,i){return '<button class="chip sg" aria-pressed="false" data-i="'+i+'">'+x[0]+' '+x[1]+'</button>'}).join("")+'</div><div class="reveal" hidden aria-live="polite"></div></div>'}
+function relBlock(i){return '<p class="sans" style="margin-bottom:0"><b>Related experiences</b></p><div class="chips">'+rel(i).map(function(j){return '<button class="chip" data-x="'+ITEMS[j][0]+'">'+ITEMS[j][0]+'</button>'}).join("")+'</div><p class="sans" style="margin-bottom:0"><b>Related threads</b></p><div class="chips">'+tagBtns(ITEMS[i])+'</div>'}
+function head(t,x){return '<summary>'+t[0]+'&nbsp;<span class="mut">'+x.role+'</span></summary><p class="mut" style="margin:.25rem 0">'+dates(x)+(x.c?', '+cl(x):'')+' '+stk(t[4])+'</p>'+(x.d?'<p>'+x.d+'</p>':'')}
+function caseBlock(i){var t=ITEMS[i],x=t[5];return '<details class="card s-'+t[4]+'" data-t="'+t[0]+'">'+head(t,x)+'<dl>'+sect(x.pl||"The question",x.prob)+sect("What I did",x.did||x.resp)+(x.obs?sect("My observation",x.obs):"")+'</dl>'+stripBlock(t[0])+(x.sub?x.sub():"")+'<dl>'+sect("What I learned",x.learn)+sect("What I would do differently now",x.diff)+(x.links?sect("Sneak a peek",'<ul>'+x.links.map(function(l){return '<li><a href="'+l[1]+'" target="_blank" rel="noopener noreferrer">'+l[0]+'</a></li>'}).join("")+'</ul>'):"")+'</dl>'+relBlock(i)+'</details>'}
+function flash(i){var t=ITEMS[i],x=t[5];return '<details class="card s-'+t[4]+'" data-t="'+t[0]+'">'+head(t,x)+'<dl>'+sect("What I did",x.did||x.resp)+sect("What I noticed",x.nt)+sect("What I learned",x.learn)+'</dl>'+stripBlock(t[0])+'<div class="chips">'+tagBtns(t)+'</div></details>'}
+function row(i){var t=ITEMS[i],x=t[5],c=x.lv!=="card";return '<div class="card s-'+t[4]+'" data-r="'+t[0]+'" data-tg="'+t[3].join("|")+'"><h3>'+t[0]+'</h3><p class="mut" style="margin:0">'+x.role+(dates(x)?', '+dates(x):'')+(x.c?', '+cl(x):(t[2]?', '+t[2]:''))+'</p>'+(x.d&&!c?'<p style="margin:.3rem 0">'+x.d+'</p>':'')+(!c&&x.resp?li(x.resp):'')+(!c?stripBlock(t[0]):'')+(c?'<p><button class="chip" data-x="'+t[0]+'">Open'+(x.lv==="case"?' the case study':'')+'</button></p>':'')+'<div class="chips" style="margin:.4rem 0 0">'+stk(t[4])+' '+tagBtns(t)+'</div></div>'}
+/* HOME */
+V.home.innerHTML='<p class="hand" style="margin:0">Yessi Anastasia</p><h1>I notice things.</h1><p class="lead">People. Places. Businesses. Experiences. Details. Stories.</p><p>I turn what I notice into ideas, experiences, strategies, content and stories.</p><div class="chain" aria-label="How I work"><span>Observe</span><span>Understand</span><span>Adapt</span><span>Align</span><span>Create value</span></div><h2>Three ways in</h2>'+[["I\'m here for your work",[["Work","work"],["Case studies","work"],["Writing","writing"],["Professional view","cv"]]],["I\'m curious",[["About","about"],["Australia","australia"],["Places","places"],["Community","community"]]],["I just want to look around",[["Archive","archive"],["Writing","writing"]].concat(PHOTOS.filter(pub).length?[["Photography","archive"]]:[])]].map(function(g){return '<div class="card"><h3>'+g[0]+'</h3><div class="chips">'+g[1].map(function(b){return '<button class="chip" data-go="'+b[1]+'">'+b[0]+'</button>'}).join("")+'</div></div>'}).join("")+'<p><button class="btn go" id="rnd">🎲 Show me something random</button></p><p class="quote" style="font-size:1.4rem">Different industries. Different places. Same habit.</p>';
+/* WORK */
+sec("work",'<h2>Work</h2><p class="lead mut">Marketing, business, travel, events, hospitality, agriculture, quality, production, operations and community.</p><p class="mut">Four case studies go deep. The Australian jobs live in '+link("Australia","australia")+' as flash cards. Everything is listed below, and '+link("Professional view","cv")+' has the plain CV.</p><h2>Case studies</h2>'+order(function(i){return ITEMS[i][5].lv==="case"}).sort(function(a,b){return a-b}).map(caseBlock).join("")+'<h2>All experience</h2><div class="chips" id="fx"><button class="chip" aria-pressed="true" data-k="All">All</button>'+chips(CAT)+'</div><p class="mut" id="fc" aria-live="polite"></p><div id="xl">'+order(function(i){return ITEMS[i][5].ty==="work"||ITEMS[i][5].lv==="case"}).map(row).join("")+'</div>');
+function filt(k){var n=0,rows=V.work.querySelectorAll("#xl [data-r]");rows.forEach(function(r){var on=k==="All"||r.dataset.tg.split("|").indexOf(k)>-1;r.hidden=!on;if(on)n++});$("#fc",V.work).textContent="Showing "+n+" of "+rows.length+" entries."}
+toggleSet($("#fx",V.work),filt);filt("All");
+/* AUSTRALIA */
+var AU=["I came to Australia partly because I wanted to find out what I was capable of outside the version of myself I already knew.","So I worked.","In kitchens. On farms. In grain operations. Behind counters. At events. In food production.","Some jobs were practical. Some were temporary. Some were completely outside my previous career.","But I was paying attention.","To people. To systems. To pressure. To customers. To what kind of work gives me energy. To what I don’t want.","And to what I’d do as me.","Australia became less of a career detour and more of a self-experiment."];
+var AB=["Working across Australian agriculture, food production and hospitality changed the way I think about business.","Before Australia, much of my experience was on the marketing and business side, thinking about customers, communication, positioning and opportunities.","Here, I got to work much closer to the actual operation.","I handled products. I followed standards. I worked in kitchens. I served customers. I worked alongside production systems.","I saw what happens when things get busy.","I started understanding business from the other direction:","What happens before the customer ever sees the product?","That changed how I think about quality, operations and customer experience.","A product doesn’t enter an empty space.","It enters a society.","And society shapes expectations.","The way people communicate. The way they queue. The way they complain. The way they ask for help. The way they interpret friendliness. The way they respond to brands.","Experience is not created by a business alone.","It is created collectively. By the business, the people working inside it, the customer, and the culture surrounding them."];
+sec("australia",'<h2>Australia</h2><p class="hand">an experiment in self-exploration</p>'+AU.map(function(p){return '<p class="wtxt">'+p+'</p>'}).join("")+'<h2>The jobs</h2><p class="mut">Compact cards. Tap one.</p>'+order(function(i){return ITEMS[i][2]==="Australia"&&ITEMS[i][5].ty==="work"}).map(function(i){return ITEMS[i][5].lv==="flash"?flash(i):row(i)}).join("")+'<h2>What Australia taught me about business</h2>'+AB.map(function(p){return '<p class="wtxt">'+p+'</p>'}).join("")+'<h2>Marketing doesn\'t sit apart from operations</h2><div class="chain"><span>Marketing</span><span>Customer</span><span>Experience</span><span>Operations</span><span>Quality</span><span>People</span><span>Culture</span><span>Market</span></div><p>What a customer experiences is shaped by the people, systems, standards, culture and environment behind the product.</p>');
+/* COMMUNITY */
+sec("community",'<h2>Community</h2><p class="lead mut">Facilitation, education, communication, cultural sensitivity and leadership, mostly in Indonesia.</p>'+order(function(i){return ITEMS[i][5].ty==="volunteer"}).map(function(i){return ITEMS[i][5].lv==="case"?row(i):flash(i)}).join("")+'<h2>How it connects</h2><p>Marketing, communication. Events, facilitation. Hospitality, people. Leadership, coordination. Community, participation. Culture, understanding.</p>');
+/* WRITING */
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function wcard(w){var two=!!w.tr;return '<details class="card s-writing" data-w="'+w.id+'"><summary>'+w.t+'&nbsp;<span class="mut">'+w.date+(two?', Indonesian with English translation':'')+'</span></summary>'+(two?'<div class="chips"><button class="chip wv" aria-pressed="true" data-v="o">Original (Indonesian)</button><button class="chip wv" aria-pressed="false" data-v="t">English translation</button></div>':'')+'<p class="wtxt" lang="'+(w.lang||"en")+'" data-o>'+esc(w.text)+'</p>'+(two?'<p class="wtxt" lang="en" data-t2 hidden>'+esc(w.tr)+'</p>':'')+'<div class="chips">'+w.th.map(function(g){return '<span class="tag">'+g+'</span>'}).join("")+'</div></details>'}
+V.writing.innerHTML='<h2>Writing</h2><p class="mut">Kept exactly as written. Odd words, lowercase, repetition and mixed languages are intentional. Originals and translations are labelled.</p>'+WRITE.filter(pub).map(wcard).join("");
+document.addEventListener("click",function(e){var b=e.target.closest(".wv");if(!b)return;var d=b.closest("details");d.querySelectorAll(".wv").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});$("[data-o]",d).hidden=b.dataset.v==="t";$("[data-t2]",d).hidden=b.dataset.v!=="t"});
+/* ABOUT */
+V.about.innerHTML='<h2>About</h2><p class="lead">I\'ve worked in places that don\'t usually appear on the same CV.</p><p class="wtxt">Marketing.\nBusiness.\nTravel.\nAgriculture.\nQuality.\nFood.\nHospitality.\nOperations.\nEvents.\nEducation.\nCommunity.</p><p>What connects them is that I keep noticing what happens between people, products, systems and experiences.</p><p>A customer is different from an investor. An investor is different from a sponsor. I don\'t think every audience should be approached the same way. I ask what each side actually needs, where those needs overlap, and how it can work for everyone involved.</p><div class="chain"><span>Observe</span><span>Understand</span><span>Adapt</span><span>Align</span><span>Create value</span></div><h2>How I work</h2><div class="scrap">'+PRINC.map(function(p){return '<div class="frag"><b>'+p+'</b></div>'}).join("")+'</div>';
+/* PROFESSIONAL VIEW */
+function cvRow(i){var t=ITEMS[i],x=t[5];return '<div style="margin:.9rem 0"><b>'+x.role+'</b>, '+t[0]+(x.c?' | '+cl(x):(t[2]?' | '+t[2]:''))+' <span class="mut">'+dates(x)+'</span>'+(x.resp&&x.lv==="card"?li(x.resp):'')+'</div>'}
+function cvSec(h,f){return '<h3>'+h+'</h3>'+order(f).map(cvRow).join("")}
+var grp=function(i){var t=ITEMS[i];return t[4]==="agriculture"?"ops":(t[2]==="Australia"?"hos":"mkt")};
+V.cv.innerHTML='<h2>Professional view</h2><p><b>Yessi Anastasia</b><br>Newcastle NSW, Australia</p><p><a href="mailto:'+EMAIL+'">'+EMAIL+'</a><br><a href="https://www.linkedin.com/in/yessi-a-0797b7180" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://www.instagram.com/yessianastasia_" target="_blank" rel="noopener noreferrer">Instagram</a></p>'+cvSec("Hospitality and customer service",function(i){return ITEMS[i][5].ty==="work"&&grp(i)==="hos"})+cvSec("Operations and agriculture",function(i){return ITEMS[i][5].ty==="work"&&grp(i)==="ops"})+cvSec("Marketing, business and events",function(i){return ITEMS[i][5].ty==="work"&&grp(i)==="mkt"})+cvSec("Community and volunteering, Indonesia",function(i){return ITEMS[i][5].ty==="volunteer"})+cvSec("Education",function(i){return ITEMS[i][5].ty==="education"})+'<h3>Skills</h3>'+li(["Business Development & Relationship Building","Consultative Sales","Client Needs Analysis","Customer & Stakeholder Engagement","Lead Generation & Marketing","Partnership Development","Negotiation & Communication","Project & Event Management","Leadership & Facilitation","Independent & Remote Work"])+'<h3>Languages</h3><p>English, Indonesian, Mandarin (basic)</p><p class="noprint"><button class="btn" onclick="print()">Print or save as PDF</button> '+link("Back to the creative version","home")+'</p>';
+/* CONNECTIONS, RANDOM, HANDLERS */
+function openExp(t){var sm=matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",d=app.querySelector('details[data-t="'+t+'"]');if(d){var v=d.closest("section").id.slice(2);if(V[v].hidden)go(v);d.open=true;d.scrollIntoView({behavior:sm,block:"start"});return}go("work");$('#fx [data-k="All"]',V.work).click();var r=app.querySelector('[data-r="'+t+'"]');if(r){r.scrollIntoView({behavior:sm,block:"center"});r.classList.add("on")}}
+document.addEventListener("click",function(e){var x=e.target.closest("[data-x]"),g=e.target.closest("[data-thread]"),o=e.target.closest("[data-open]"),b=e.target.closest(".sg"),r=e.target.closest("#rnd");if(g){go("places");plFilter(g.dataset.thread)}else if(x)openExp(x.dataset.x);if(o)openExp(o.dataset.open);if(r)rnd();if(b){var w=b.closest(".sc2");w.querySelectorAll(".sg").forEach(function(y){y.setAttribute("aria-pressed",y===b?"true":"false")});var rv=$(".reveal",w);var tx=STRIPS[w.dataset.s][1][b.dataset.i][2];rv.hidden=!tx;rv.innerHTML=tx}});
+/* PLACES: a location index built from the same data */
+var CT=["Australia","Indonesia","Malaysia"];
+function plDraw(g){var m={};order(function(i){return !g||ITEMS[i][3].indexOf(g)>-1}).forEach(function(i){locs(i).forEach(function(p){var e=m[p]=m[p]||{c:ITEMS[i][2],i:[]};e.i.push(i)})});$("#pl",V.places).innerHTML=CT.map(function(c){var ps=Object.keys(m).filter(function(p){return m[p].c===c}).sort();return ps.length?'<h3 style="margin-top:1.5rem">'+c+'</h3>'+ps.map(function(p){return '<div class="card"><h3>'+(p===c?'Across '+c:p+(STATE[p]?' · '+STATE[p]:''))+'</h3><div class="chips">'+m[p].i.map(function(i){return '<button class="chip" data-x="'+ITEMS[i][0]+'">'+ITEMS[i][0]+'</button>'}).join("")+'</div></div>'}).join(""):""}).join("")}
+function plFilter(g){V.places.querySelectorAll("#pf .chip").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.k===g?"true":"false")});plDraw(g==="All"?"":g)}
+sec("places",'<h2>Places I\'ve been</h2><p class="mut">Where the work happened. Tap an experience to open it, or follow a thread to see which places it runs through.</p><div class="chips" id="pf"><button class="chip" aria-pressed="true" data-k="All">All</button>'+chips(CAT)+'</div><div id="pl"></div>');
+toggleSet($("#pf",V.places),plFilter);plDraw("");
+/* ARCHIVE: things collected from across the data; photos appear only when real ones exist */
+function arch(){var a=[];WRITE.filter(pub).forEach(function(w){a.push({k:"writing",t:w.t,s:w.date,w:w.id})});THINK.filter(pub).forEach(function(h){a.push({k:"thinkers",t:h.t,s:h.s+" "+h.c,x:h.x})});ITEMS.forEach(function(t){if(!pub(t))return;var x=t[5];if(x.nt)a.push({k:"thoughts",t:t[0],s:x.nt,x:t[0]});if(t[3].indexOf("food")>-1)a.push({k:"food",t:t[0],s:x.role,x:t[0]});if(t[3].indexOf("travel")>-1)a.push({k:"travel",t:t[0],s:x.role,x:t[0]});if(x.lv==="case")a.push({k:"work",t:t[0],s:x.role,x:t[0]})});return a}
+function adDraw(k){$("#ag",V.archive).innerHTML=arch().filter(function(a){return k==="All"||a.k===k}).map(function(a){return '<div class="frag"><span class="hand">'+a.k+'</span><b>'+a.t+'</b><p style="margin:.3rem 0;font-size:.95rem">'+a.s+'</p><button class="chip" '+(a.w?'data-wo="'+a.w+'"':'data-x="'+a.x+'"')+'>Open</button></div>'}).join("")}
+var MATCH=[["A restaurant can become a small community.","Hamy Pho"],["A finished sushi plate hides a surprising amount of preparation.","Mitsuki Sushi"],["A grain sample isn’t just a handful of grain.","GrainCorp"],["Business models don’t exist separately from circumstances.","Table2Own"],["Community events are people before they are schedules.","Pontianak ChangeMaker Youth Summit"],["The flow is flowing.","Guzman y Gomez"],["A content matrix maketh the brand.","Japanese Festival by Ruby"]],mi=-1;
+function mnext(){mi=(mi+1)%MATCH.length;var m=MATCH[mi],o=[m[1]];MATCH.forEach(function(q){if(o.length<4&&q[1]!==m[1])o.push(q[1])});o.sort(function(){return Math.random()-.5});$("#mq",V.archive).innerHTML='<p class="quote" style="font-size:1.4rem">'+m[0]+'</p><div class="chips">'+o.map(function(x){return '<button class="chip mo" data-k="'+x+'">'+x+'</button>'}).join("")+'</div><div class="reveal" id="ma" hidden aria-live="polite"></div>'}
+sec("archive",'<h2>Archive</h2><p class="mut">A box of things I collected. '+link("What would you notice first?","stories")+'</p>'+(PHOTOS.filter(pub).length?'<h2>Things I noticed</h2><div class="scrap">'+PHOTOS.filter(pub).map(function(p){return '<figure class="frag" style="margin:0"><img class="photo" style="width:100%;border-radius:4px" src="'+p.src+'" alt="'+(p.alt||"")+'">'+(p.caption?'<figcaption>'+p.caption+'</figcaption>':'')+'</figure>'}).join("")+'</div>':'')+'<h2>Match what I noticed</h2><div id="mq"></div><h2>Browse</h2><div class="chips" id="ac"><button class="chip" aria-pressed="true" data-k="All">All</button>'+chips(["writing","thoughts","thinkers","food","travel","work"].filter(function(k){return arch().some(function(a){return a.k===k})}))+'</div><div class="scrap" id="ag"></div>');
+toggleSet($("#ac",V.archive),adDraw);adDraw("All");mnext();
+V.archive.addEventListener("click",function(e){var b=e.target.closest(".mo"),n=e.target.closest("#mn");if(n)mnext();if(b){var m=MATCH[mi],ok=b.dataset.k===m[1],a=$("#ma",V.archive);a.hidden=false;a.innerHTML=(ok?'Yes. ':'Not quite. ')+'This one belongs to <b>'+m[1]+'</b>. <button class="chip" data-x="'+m[1]+'">Open it</button> <button class="chip" id="mn">Another</button>'}});
+document.addEventListener("click",function(e){var w=e.target.closest("[data-wo]");if(w){go("writing");var d=$('[data-w="'+w.dataset.wo+'"]',V.writing);d.open=true;d.scrollIntoView({block:"start"})}});
+/* RANDOM and friendly ending */
+function rnd(){var pool=ITEMS.filter(function(t){return pub(t)&&t[5].ty!=="education"}).map(function(t){return ["i",t[0]]}).concat(WRITE.filter(pub).map(function(w){return ["w",w.id]}));var p=pool[Math.floor(Math.random()*pool.length)];if(p[0]==="w"){go("writing");var d=$('[data-w="'+p[1]+'"]',V.writing);d.open=true;d.scrollIntoView({block:"start"})}else openExp(p[1])}
+var rb=document.createElement("button");rb.textContent="🎲 Random";rb.onclick=rnd;nav.appendChild(rb);
+var hi=document.createElement("button");hi.textContent="Say hi";hi.onclick=function(){document.getElementById("ft").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})};nav.appendChild(hi);
+document.body.insertAdjacentHTML("beforeend",'<footer id="ft" class="ft noprint"><h2>Fancy saying hi?</h2><p>You can find me here.</p><p><a class="btn" href="https://www.instagram.com/yessianastasia_?stkn=c2xidnFhOTltajV2" target="_blank" rel="noopener noreferrer">Instagram @yessianastasia_</a> <a class="btn" href="https://www.linkedin.com/in/yessi-a-0797b7180?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn: Yessi Anastasia</a></p><p class="mut">Or if you\'d rather send me a proper email, that\'s here too: <a href="mailto:'+EMAIL+'">'+EMAIL+'</a></p></footer>');
+/* SMALL SCENES in Stories */
+st.insertAdjacentHTML("beforeend",'<h2>Small scenes</h2><p class="mut">Tap each stage.</p>'+STRIPS.map(function(s,n){return '<div class="sc2" data-s="'+n+'"><h3>'+s[0]+'</h3><div class="strip">'+s[1].map(function(x,i){return '<button class="chip sg" aria-pressed="false" data-i="'+i+'">'+x[0]+' '+x[1]+'</button>'}).join("")+'</div><div class="reveal" hidden aria-live="polite"></div></div>'}).join("")+'<p class="quote" style="font-size:1.4rem">You notice differently when you\'re curious.</p><p>'+link("Places I've been","places")+'</p>');
+/* SEARCH: public data only, built from the same structured data */
+function corpus(){var c=[],pl={};ITEMS.forEach(function(t,i){if(!pub(t))return;var x=t[5],tx=[t[0],x.role,x.d||"",cl(x).replace(/<br>/g," "),t[2],t[3].join(" "),[].concat(x.did||[],x.resp||[],x.learn||[],x.diff||[]).join(" "),x.prob||"",x.nt||""].join(" ");c.push({k:x.lv==="case"?"case study":x.ty==="volunteer"?"community":x.ty==="education"?"education":"experience",t:t[0],s:x.role,tx:tx,x:t[0]});locs(i).forEach(function(p){pl[p]=(pl[p]||0)+1})});
+STRIPS.forEach(function(s){var own=ITEMS.some(function(t){return t[0]===s[0]&&pub(t)})?s[0]:"Table2Own";s[1].forEach(function(st){if(st[2])c.push({k:"observation",t:st[1]+", "+s[0],s:st[2],tx:st[1]+" "+st[2]+" "+s[0],x:own})})});
+Object.keys(pl).forEach(function(p){c.push({k:"place",t:p+(STATE[p]?" · "+STATE[p]:""),s:pl[p]+" experience"+(pl[p]>1?"s":""),tx:p,go:"places"})});
+WRITE.filter(pub).forEach(function(w){c.push({k:"writing",t:w.t,s:w.date,tx:w.t+" "+w.text+" "+(w.tr||""),w:w.id})});
+THINK.filter(pub).forEach(function(h){c.push({k:"thinker card",t:h.t,s:h.s,tx:h.t+" "+h.s+" "+h.c,x:h.x})});
+PHOTOS.filter(pub).forEach(function(p){c.push({k:"photo",t:p.caption||p.alt||"Photo",s:p.date||"",tx:(p.caption||"")+" "+(p.alt||"")+" "+(p.place||""),go:"archive"})});return c}
+sec("search",'<h2>Search</h2><label for="q" class="mut">Search the work, writing, places and observations</label><input id="q" type="search" autocomplete="off"><p class="mut" id="qc" aria-live="polite"></p><div id="qr"></div>');
+function doSearch(){var q=$("#q",V.search).value.trim().toLowerCase(),o=$("#qr",V.search),n=$("#qc",V.search);if(!q){o.innerHTML="";n.textContent="";return}var w=q.split(/\s+/),r=corpus().filter(function(c){var h=c.tx.toLowerCase();return w.every(function(x){return h.indexOf(x)>-1})}).slice(0,40);n.textContent=r.length+" result"+(r.length===1?"":"s");o.innerHTML=r.map(function(c){return '<div class="card"><span class="hand">'+c.k+'</span><h3>'+c.t+'</h3><p style="margin:.2rem 0">'+c.s+'</p><button class="chip" '+(c.w?'data-wo="'+c.w+'"':c.go?'data-go="'+c.go+'"':'data-x="'+c.x+'"')+'>Open</button></div>'}).join("")}
+$("#q",V.search).addEventListener("input",doSearch);
+var h=location.hash.slice(1);go(V[h]?h:"home");
+</script>
+</body>
+</html>
